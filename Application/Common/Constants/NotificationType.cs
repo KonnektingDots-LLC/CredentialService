@@ -1,12 +1,11 @@
 ﻿using System.ComponentModel;
-using System.Security.AccessControl;
 
 namespace cred_system_back_end_app.Application.Common.Constants
 {
     public static class NotificationType
     {
         [Description("Delegate Invitation")]
-        public const string DELEGATE_INV = "DELG_INV";   
+        public const string DELEGATE_INV = "DELG_INV";
         public const string PROVIDER_REV = "PROV_REV";
         public const string INSURER_INV = "INSR_INV";
 

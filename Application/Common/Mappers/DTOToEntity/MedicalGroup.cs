@@ -1,6 +1,6 @@
 ﻿using cred_system_back_end_app.Application.Common.Helpers;
-using cred_system_back_end_app.Application.UseCase.Submit.DTO;
-using cred_system_back_end_app.Infrastructure.DB.Entity;
+using cred_system_back_end_app.Domain.Entities;
+using cred_system_back_end_app.Domain.Services.Submit.DTO;
 using Microsoft.IdentityModel.Tokens;
 
 namespace cred_system_back_end_app.Application.Common.Mappers.DTOToEntity
@@ -10,9 +10,9 @@ namespace cred_system_back_end_app.Application.Common.Mappers.DTOToEntity
         public static MedicalGroupEntity GetMedicalGroupEntity(MedicalGroupDTO medicalGroupDTO, int medicalGroupType)
         {
             ICollection<AddressServiceHourEntity> serviceHours = null;
-            
-            if (!medicalGroupDTO.ServiceHours.IsNullOrEmpty()) 
-            { 
+
+            if (!medicalGroupDTO.ServiceHours.IsNullOrEmpty())
+            {
                 serviceHours = ServiceHoursHelper.GetAddressServiceHourEntities(medicalGroupDTO.ServiceHours);
             }
 
@@ -31,7 +31,7 @@ namespace cred_system_back_end_app.Application.Common.Mappers.DTOToEntity
                     null : DateTimeHelper.ParseDate(medicalGroupDTO.EndorsementLetterDate),
                 EmployerId_EIN = medicalGroupDTO.EmployerId,
                 ContactPhone = medicalGroupDTO.ContactNumber,
-                EmailAddress = medicalGroupDTO.Email,                
+                EmailAddress = medicalGroupDTO.Email,
                 Address = AddressHelper.GetAddressEntities(medicalGroupDTO.AddressInfo, serviceHours).ToList(),
                 IsActive = true,
             };

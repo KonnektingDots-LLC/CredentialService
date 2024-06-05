@@ -1,5 +1,5 @@
-﻿using cred_system_back_end_app.Application.UseCase.Submit.DTO;
-using cred_system_back_end_app.Infrastructure.DB.Entity;
+﻿using cred_system_back_end_app.Domain.Entities;
+using cred_system_back_end_app.Domain.Services.Submit.DTO;
 
 namespace cred_system_back_end_app.Application.Common.Mappers.DTOToEntity
 {
@@ -10,18 +10,18 @@ namespace cred_system_back_end_app.Application.Common.Mappers.DTOToEntity
             var hospitals = new List<HospitalEntity>();
 
             var primaryHospitalData = submitData.Content.HospitalAffiliations.Primary;
-            
+
             hospitals.Add(GetHospitalEntity(primaryHospitalData));
 
             if (submitData.Content.HospitalAffiliations.Secondary != null)
             {
-                 var secondaryHospitalData = submitData.Content.HospitalAffiliations.Secondary;
+                var secondaryHospitalData = submitData.Content.HospitalAffiliations.Secondary;
                 hospitals.Add(GetHospitalEntity(secondaryHospitalData, isSecondary: true));
             }
 
             return hospitals;
-        }        
-        
+        }
+
         public static IEnumerable<ProviderHospitalEntity> GetProviderHospitalEntities(SubmitRequestDTO submitData, int providerId)
         {
             var hospitalEntities = GetHospitalEntities(submitData);

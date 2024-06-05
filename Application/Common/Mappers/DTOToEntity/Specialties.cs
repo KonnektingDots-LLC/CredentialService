@@ -1,5 +1,5 @@
-﻿using cred_system_back_end_app.Application.UseCase.Submit.DTO;
-using cred_system_back_end_app.Infrastructure.DB.Entity;
+﻿using cred_system_back_end_app.Domain.Entities;
+using cred_system_back_end_app.Domain.Services.Submit.DTO;
 
 namespace cred_system_back_end_app.Application.Common.Mappers.DTOToEntity
 {
@@ -7,7 +7,7 @@ namespace cred_system_back_end_app.Application.Common.Mappers.DTOToEntity
     {
         public static IEnumerable<ProviderSpecialtyEntity> GetProviderSpecialtyEntities
             (
-                IEnumerable<SpecialtyDTO> specialties, 
+                IEnumerable<SpecialtyDTO> specialties,
                 IEnumerable<DocumentLocationEntity> documents,
                 int providerId
             )
@@ -37,7 +37,7 @@ namespace cred_system_back_end_app.Application.Common.Mappers.DTOToEntity
         private static string GetAzureBlobFileName(IEnumerable<DocumentLocationEntity> documents, SpecialtyDTO specialtyDTO, int providerId)
         {
             return documents
-                .Where(d => d.UploadFilename == specialtyDTO.EvidenceFile.Name 
+                .Where(d => d.UploadFilename == specialtyDTO.EvidenceFile.Name
                 && d.DocumentTypeId == specialtyDTO.EvidenceFile.DocumentTypeId
                 && d.ProviderId == providerId)
                 .FirstOrDefault()

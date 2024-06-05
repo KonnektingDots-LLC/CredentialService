@@ -1,9 +1,7 @@
 ﻿using cred_system_back_end_app.Application.Common.Constants;
-using cred_system_back_end_app.Application.CRUD.MedicalGroup.DTO;
-using cred_system_back_end_app.Application.UseCase.Submit.DTO;
-using cred_system_back_end_app.Infrastructure.DB.Entity;
+using cred_system_back_end_app.Domain.Entities;
+using cred_system_back_end_app.Domain.Services.Submit.DTO;
 using Microsoft.IdentityModel.Tokens;
-using System.Collections.Generic;
 
 namespace cred_system_back_end_app.Application.Common.Helpers
 {
@@ -19,22 +17,22 @@ namespace cred_system_back_end_app.Application.Common.Helpers
             }
 
             return addressEntity;
-        }        
-        
+        }
+
         public static AddressEntity GetAddressEntity(AddressDTO addressDTO, int addressTypeId)
         {
-            var addressEntity =  new AddressEntity
+            var addressEntity = new AddressEntity
             {
-                 Name = addressDTO.Name, 
-                 AddressTypeId = addressTypeId,
-                 Address1 = addressDTO.Address1,
-                 Address2 = addressDTO?.Address2,
-                 AddressCountryId = addressDTO.AddressCountryId,
-                 City = addressDTO.City,
-                 IsClosed = false,
-                 IsActive = true,
-                 CreatedBy = "",
-                 CreationDate = DateTime.Now,
+                Name = addressDTO.Name,
+                AddressTypeId = addressTypeId,
+                Address1 = addressDTO.Address1,
+                Address2 = addressDTO?.Address2,
+                AddressCountryId = addressDTO.AddressCountryId,
+                City = addressDTO.City,
+                IsClosed = false,
+                IsActive = true,
+                CreatedBy = "",
+                CreationDate = DateTime.Now,
             };
 
             addressEntity = GetAddressEntityWithPostalCodes(addressEntity, addressDTO);
@@ -69,15 +67,15 @@ namespace cred_system_back_end_app.Application.Common.Helpers
                 GetAddressEntity(addressInfoDTO.Physical, serviceHours, AddressTypes.Physical),
                 GetAddressEntity(addressInfoDTO.Mail, AddressTypes.Mail),
             };
-        }         
-        
+        }
+
         public static AddressEntity[] GetAddressEntities(AddressAndLocationDTO addressAndLocationDTO)
         {
             ICollection<AddressServiceHourEntity> serviceHours = null;
 
             if (!addressAndLocationDTO.ServiceHours.IsNullOrEmpty())
             {
-                 serviceHours = ServiceHoursHelper.GetAddressServiceHourEntities(addressAndLocationDTO.ServiceHours);
+                serviceHours = ServiceHoursHelper.GetAddressServiceHourEntities(addressAndLocationDTO.ServiceHours);
             }
 
             return new AddressEntity[]
@@ -85,8 +83,8 @@ namespace cred_system_back_end_app.Application.Common.Helpers
                 GetAddressEntity(addressAndLocationDTO.AddressInfo.Physical, serviceHours, AddressTypes.Physical),
                 GetAddressEntity(addressAndLocationDTO.AddressInfo.Mail, AddressTypes.Mail),
             };
-        }        
-        
+        }
+
         public static AddressEntity[] GetAddressEntities(AddressInfoDTO addressInfoDTO)
         {
             return new AddressEntity[]
@@ -94,13 +92,8 @@ namespace cred_system_back_end_app.Application.Common.Helpers
                 GetAddressEntity(addressInfoDTO.Physical, AddressTypes.Physical),
                 GetAddressEntity(addressInfoDTO.Mail, AddressTypes.Mail),
             };
-        }    
-        
-        public static IEnumerable<AddressEntity> GetAllAddressEntities(List<AddressAndLocationDTO> addressInfoDTO)
-        {
-            return addressInfoDTO.SelectMany(addressInfo => GetAddressEntities(addressInfo));
-        }        
-        
+        }
+
         public static IEnumerable<AddressEntity> GetAllAddressesByType(this ICollection<AddressEntity> addresses, int addressType)
         {
             return addresses.Where(a => a.AddressTypeId == addressType);
@@ -114,9 +107,9 @@ namespace cred_system_back_end_app.Application.Common.Helpers
             return (physical, postal);
         }
 
-        public static string GetFormattedAddressString(this AddressEntity address) 
+        public static string GetFormattedAddressString(this AddressEntity address)
         {
-            if (address.AddressCountryId == CountryCodes.PR || address.AddressCountryId == CountryCodes.USA) 
+            if (address.AddressCountryId == CountryCodes.PR || address.AddressCountryId == CountryCodes.USA)
             {
                 return $"{address.Address1} {address.City}, {address.AddressState?.Name} {address.AddressCountry} {address.ZipCode}{(address.ZipCodeExtension.IsNullOrEmpty() ? "" : "-" + address.ZipCodeExtension)}";
             }
@@ -124,10 +117,10 @@ namespace cred_system_back_end_app.Application.Common.Helpers
             return $"{address.Address1} {address.City}, {address.StateOther}, {address.AddressCountry} {address.InternationalCode}";
         }
 
-        private static AddressEntity GetAddressEntityWithPostalCodes(AddressEntity addressEntity, AddressDTO addressDTO) 
-        { 
-            if (addressEntity.AddressCountryId == CountryCodes.PR || addressEntity.AddressCountryId == CountryCodes.USA) 
-            { 
+        private static AddressEntity GetAddressEntityWithPostalCodes(AddressEntity addressEntity, AddressDTO addressDTO)
+        {
+            if (addressEntity.AddressCountryId == CountryCodes.PR || addressEntity.AddressCountryId == CountryCodes.USA)
+            {
                 if (addressDTO.ZipCode == null)
                 {
                     throw new AggregateException("Zipcode was not provided.");
@@ -140,7 +133,7 @@ namespace cred_system_back_end_app.Application.Common.Helpers
                 return addressEntity;
             }
 
-            if (addressDTO.InternationalCode == null) 
+            if (addressDTO.InternationalCode == null)
             {
                 throw new AggregateException("This country requires a Postal Code.");
             }

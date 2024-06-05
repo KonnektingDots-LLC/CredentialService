@@ -1,6 +1,7 @@
-﻿using System.Runtime.Serialization;
+﻿using cred_system_back_end_app.Domain.Exceptions;
+using System.Runtime.Serialization;
 
-namespace cred_system_back_end_app.Application.Common.ExceptionHandling.ExceptionList
+namespace cred_system_back_end_app.Application.Common.ExceptionHandling.ExceptionClass
 {
     public class UserNotFoundException : Exception
     {

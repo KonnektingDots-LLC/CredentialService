@@ -1,5 +1,5 @@
 ﻿using cred_system_back_end_app.Application.Common.Helpers;
-using cred_system_back_end_app.Infrastructure.DB.Entity;
+using cred_system_back_end_app.Domain.Entities;
 using cred_system_back_end_app.Infrastructure.PdfReport.DTO;
 
 namespace cred_system_back_end_app.Application.Common.Mappers.EntityToPDF
@@ -10,7 +10,7 @@ namespace cred_system_back_end_app.Application.Common.Mappers.EntityToPDF
         {
             var primaryHospital = hospitalEntities.Where(h => !h.IsSecondary).First();
             var secondaryHospital = hospitalEntities.Where(h => h.IsSecondary).FirstOrDefault();
-            
+
             var hospitalAffiliationsDTO = new HospitalAffiliationsDto
             {
                 Hospital1Affiliations = GetPrimaryHospitalAffiliationDTO(primaryHospital),
@@ -35,8 +35,8 @@ namespace cred_system_back_end_app.Application.Common.Mappers.EntityToPDF
                 Hosp1PrivFrom = periodData.GetFormattedStartDate(),
                 Hosp1PrivTo = periodData.GetFormattedEndDate()
             };
-        }        
-        
+        }
+
         public static Hospital2AffiliationsDto GetSecondaryHospitalAffiliationDTO(HospitalEntity hospitalEntity)
         {
             var periodData = hospitalEntity.HospitalPriviledgePeriod;
@@ -52,7 +52,7 @@ namespace cred_system_back_end_app.Application.Common.Mappers.EntityToPDF
 
         #region helpers
 
-        private static string? GetHospitalName(HospitalEntity hospitalEntity) 
+        private static string? GetHospitalName(HospitalEntity hospitalEntity)
         {
             var hospitalList = hospitalEntity.HospitalList;
 

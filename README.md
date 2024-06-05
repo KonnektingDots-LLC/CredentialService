@@ -31,3 +31,12 @@ dotnet build
 dotnet run
 ```
 These will install any needed dependencies, build the project, and run the project respectively.
+
+It is recomended to use `Visual Studio` to run and debug the API.
+
+# Endpoints
+
+![Admin Resource](../ReadmeAssets/Screenshot-AdminResources.png)
+![Delegates Resource](../ReadmeAssets/Screenshot-DelegatesResources.png)
+![Insurers Resource](../ReadmeAssets/Screenshot-InsurersResources.png)
+![Providers Resource](../ReadmeAssets/Screenshot-ProvidersResources.png)

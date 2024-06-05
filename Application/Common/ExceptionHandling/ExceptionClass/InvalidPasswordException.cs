@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace cred_system_back_end_app.Application.Common.ExceptionHandling.ExceptionClass
+﻿namespace cred_system_back_end_app.Application.Common.ExceptionHandling.ExceptionClass
 {
     /// <summary>
     /// An exception for wrong passwords.

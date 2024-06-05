@@ -1,14 +1,14 @@
-﻿using cred_system_back_end_app.Infrastructure.DB.Entity;
+﻿using cred_system_back_end_app.Domain.Entities;
 
 namespace cred_system_back_end_app.Application.Common.EqualityComparers
 {
     public class ProviderSpecialtyComparer : IEqualityComparer<ProviderSpecialtyEntity>
     {
-        public bool Equals(ProviderSpecialtyEntity ps1, ProviderSpecialtyEntity ps2) 
-        { 
-            if (ps1.ProviderId == ps2.ProviderId 
+        public bool Equals(ProviderSpecialtyEntity ps1, ProviderSpecialtyEntity ps2)
+        {
+            if (ps1.ProviderId == ps2.ProviderId
                 && ps1.SpecialtyListId == ps2.SpecialtyListId
-                && ps1.AzureBlobFileName == ps2.AzureBlobFileName) 
+                && ps1.AzureBlobFileName == ps2.AzureBlobFileName)
             {
                 return true;
             }
@@ -16,9 +16,9 @@ namespace cred_system_back_end_app.Application.Common.EqualityComparers
             return false;
         }
 
-        public int GetHashCode(ProviderSpecialtyEntity obj) 
-        { 
-            return obj.SpecialtyListId.GetHashCode(); 
+        public int GetHashCode(ProviderSpecialtyEntity obj)
+        {
+            return obj.SpecialtyListId.GetHashCode();
         }
     }
 }

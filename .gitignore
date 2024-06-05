@@ -362,3 +362,5 @@ MigrationBackup/
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
 /cred-system-back-end-app.sln
+/.sonarqube/conf
+/Secrets.json

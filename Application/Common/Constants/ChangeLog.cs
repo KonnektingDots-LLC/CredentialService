@@ -1,9 +1,6 @@
-﻿
-using Microsoft.AspNetCore.Http;
-
-namespace cred_system_back_end_app.Application.Common.Constants
+﻿namespace cred_system_back_end_app.Application.Common.Constants
 {
-    public class ChangeLogUseCases 
+    public class ChangeLogUseCases
     {
         public const string Submit = "SUBMIT";
         public const string ReSubmit = "RESUBMIT";
@@ -14,7 +11,7 @@ namespace cred_system_back_end_app.Application.Common.Constants
         public const string DeactivateDelegate = "DEACTDELG";
     }
 
-    public  class ChangeLogResourceTypes
+    public class ChangeLogResourceTypes
     {
         public const string OCS = "OCS";
         public const string AdminInsurer = "AINS";

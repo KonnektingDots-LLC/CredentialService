@@ -1,5 +1,4 @@
 ﻿using Microsoft.AspNetCore.Mvc.Filters;
-using System.Security.Claims;
 
 namespace cred_system_back_end_app.Infrastructure.B2C
 {
@@ -24,7 +23,7 @@ namespace cred_system_back_end_app.Infrastructure.B2C
                 throw new KeyNotFoundException(nameof(role));
             }
 
-            context.HttpContext.Items["UserRole"] = email;           
+            context.HttpContext.Items["UserRole"] = email;
         }
     }
 }

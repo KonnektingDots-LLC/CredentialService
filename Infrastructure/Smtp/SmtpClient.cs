@@ -1,41 +1,28 @@
-﻿using AutoMapper;
+﻿using cred_system_back_end_app.Application.DTO.Responses;
+using cred_system_back_end_app.Domain.Settings;
+using MailKit.Security;
 using Microsoft.Extensions.Options;
 using MimeKit;
-using MailKit.Security;
-using cred_system_back_end_app.Application.Common.ResponseDTO;
-using cred_system_back_end_app.Infrastructure.Settings;
 using MimeKit.Text;
-using cred_system_back_end_app.Application.UseCase.Notifications;
 
-namespace cred_system_back_end_app.Infrastructure.Smpt
+namespace cred_system_back_end_app.Infrastructure.Smtp
 {
     public class SmtpClient
     {
-
-        private readonly IMapper _mapper;
         private readonly SmtpSettings _smtpSettings;
         private readonly ILogger<SmtpClient> _logger;
-        private readonly IConfiguration _configuration;
-        private readonly IWebHostEnvironment _env;
-        private readonly SaveNotificationCase _saveNotificationCase;
 
-
-        public SmtpClient(IMapper mapper, IOptions<SmtpSettings> smtpSettings, 
-            ILogger<SmtpClient> logger, IConfiguration configuration, IWebHostEnvironment env,
-            SaveNotificationCase saveNotificationCase)
+        public SmtpClient(IOptions<SmtpSettings> smtpSettings,
+            ILogger<SmtpClient> logger, IConfiguration configuration, IWebHostEnvironment env)
         {
-            _mapper = mapper;
             _smtpSettings = smtpSettings.Value;
             _logger = logger;
-            _configuration = configuration;
-            _env = env;
-            if (!_env.IsDevelopment()) {
-                _smtpSettings.SmtpPass = _configuration["SmtpPass"];
-                _smtpSettings.Username = _configuration["SmtpUser"];
-                _smtpSettings.SenderEmail = _configuration["SmtpUser"];
+            if (!env.IsDevelopment())
+            {
+                _smtpSettings.SmtpPass = configuration["SmtpPass"];
+                _smtpSettings.Username = configuration["SmtpUser"];
+                _smtpSettings.SenderEmail = configuration["SmtpUser"];
             }
-           _saveNotificationCase = saveNotificationCase;
-            
         }
 
         public async Task<CommResponseDto> SendEmailAsync(SmtpClientRequest email)
@@ -58,8 +45,8 @@ namespace cred_system_back_end_app.Infrastructure.Smpt
                     await client.AuthenticateAsync(_smtpSettings.Username, _smtpSettings.SmtpPass);
                     await client.SendAsync(message);
                     await client.DisconnectAsync(true);
-                    return new CommResponseDto() 
-                    { 
+                    return new CommResponseDto()
+                    {
                         Body = email.Body,
                         Subject = email.Subject,
                         SenderEmail = _smtpSettings.SenderEmail

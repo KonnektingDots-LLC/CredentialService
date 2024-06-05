@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.Serialization;
-using System.Threading.Tasks;
+﻿using System.Runtime.Serialization;
 
-namespace cred_system_back_end_app.Application.Common.ExceptionHandling
+namespace cred_system_back_end_app.Application.Common.ExceptionHandling.ExceptionClass
 {
     /// <summary>
     /// A generic exception to describe State Hub specific errors (known exceptions).

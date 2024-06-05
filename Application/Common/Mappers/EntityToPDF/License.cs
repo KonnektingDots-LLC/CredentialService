@@ -1,5 +1,5 @@
 ﻿using cred_system_back_end_app.Application.Common.Constants;
-using cred_system_back_end_app.Infrastructure.DB.Entity;
+using cred_system_back_end_app.Domain.Entities;
 using cred_system_back_end_app.Infrastructure.PdfReport.DTO;
 
 namespace cred_system_back_end_app.Application.Common.Mappers.EntityToPDF
@@ -91,7 +91,7 @@ namespace cred_system_back_end_app.Application.Common.Mappers.EntityToPDF
             return new LicenseTelemedicineDto() { LicTelemedicine = HasLicense(false) };
         }
 
-        private static string HasLicense(bool hasLicense) 
+        private static string HasLicense(bool hasLicense)
         {
             return hasLicense ? "YES" : "N/A";
         }

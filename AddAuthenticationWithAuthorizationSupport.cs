@@ -1,5 +1,4 @@
 ﻿using Microsoft.AspNetCore.Authorization;
-using Microsoft.Identity.Web;
 
 namespace cred_system_back_end_app
 {

@@ -16,7 +16,7 @@ namespace cred_system_back_end_app
                 return Task.CompletedTask;
             }
 
-            Claim scopeClaim = context?.User?.FindFirst(ClaimConstants.Scp);           
+            Claim scopeClaim = context?.User?.FindFirst(ClaimConstants.Scp);
 
             if (scopeClaim == null)
                 scopeClaim = context?.User?.FindFirst(ClaimConstants.Scope);

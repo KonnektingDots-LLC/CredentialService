@@ -4,6 +4,6 @@
     {
         public const string READ_WRITE = "write_data read_data";
         public const string READ = "read_data";
-        public const string WRITE= "write_data";
+        public const string WRITE = "write_data";
     }
 }

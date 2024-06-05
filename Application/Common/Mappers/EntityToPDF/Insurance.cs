@@ -1,6 +1,5 @@
 ﻿using cred_system_back_end_app.Application.Common.Constants;
-using cred_system_back_end_app.Application.UseCase.Submit.DTO;
-using cred_system_back_end_app.Infrastructure.DB.Entity;
+using cred_system_back_end_app.Domain.Entities;
 using cred_system_back_end_app.Infrastructure.PdfReport.DTO;
 
 namespace cred_system_back_end_app.Application.Common.Mappers.EntityToPDF
@@ -30,8 +29,8 @@ namespace cred_system_back_end_app.Application.Common.Mappers.EntityToPDF
             {
                 ProfLCarrierName = GetInsuranceCarrierName(professionalLiabilityData),
                 ProfLPolicyNum = professionalLiabilityData.PolicyNumber.ToString(),
-                ProfLCoverageAmt = new ProfCoverageAmountDto 
-                { 
+                ProfLCoverageAmt = new ProfCoverageAmountDto
+                {
                     AggregateLimit = professionalLiabilityData.CoverageAggregateLimit,
                     PerOccurrence = professionalLiabilityData.CoverageAmountPerOccurence
                 },
@@ -40,10 +39,10 @@ namespace cred_system_back_end_app.Application.Common.Mappers.EntityToPDF
             };
         }
 
-        public static string GetInsuranceCarrierName(MalpracticeEntity malpracticeEntity) 
+        public static string GetInsuranceCarrierName(MalpracticeEntity malpracticeEntity)
         {
             return malpracticeEntity.MalpracticeCarrier.Name.ToUpper() == "OTHER" ?
-                   malpracticeEntity.MalpracticeCarrierOther : 
+                   malpracticeEntity.MalpracticeCarrierOther :
                    malpracticeEntity.MalpracticeCarrier.Name;
         }
 

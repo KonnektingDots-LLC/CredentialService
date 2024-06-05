@@ -1,10 +1,7 @@
 ﻿using cred_system_back_end_app.Application.Common.Constants;
 using cred_system_back_end_app.Application.Common.Helpers;
-using cred_system_back_end_app.Application.Common.Mappers.EntityToPDF;
-using cred_system_back_end_app.Application.UseCase.Submit.DTO;
-using cred_system_back_end_app.Application.UseCase.Submit.DTO.EducationDTOs;
-using cred_system_back_end_app.Infrastructure.DB.ContextEntity;
-using cred_system_back_end_app.Infrastructure.DB.Entity;
+using cred_system_back_end_app.Domain.Entities;
+using cred_system_back_end_app.Domain.Services.Submit.DTO.EducationDTOs;
 
 namespace cred_system_back_end_app.Application.Common.Mappers.DTOToEntity
 {
@@ -52,8 +49,8 @@ namespace cred_system_back_end_app.Application.Common.Mappers.DTOToEntity
                 ProviderId = providerId,
                 EducationInfo = GetResidencyEntity(residency)
             });
-        }        
-        
+        }
+
         public static IEnumerable<ProviderEducationInfoEntity> GetProviderFellowshipEntities(IEnumerable<FellowshipDTO> fellowshipDTOs, int providerId)
         {
             return fellowshipDTOs.Select(fellowship => new ProviderEducationInfoEntity
@@ -112,7 +109,7 @@ namespace cred_system_back_end_app.Application.Common.Mappers.DTOToEntity
             //Document RelationShip
             var newBoardDocument = new BoardDocumentEntity
             {
-                
+
                 AzureBlobFilename = boardData.CertificateFile.AzureBlobFilename,
                 Board = newBoard,
             };
@@ -144,7 +141,7 @@ namespace cred_system_back_end_app.Application.Common.Mappers.DTOToEntity
             //Document RelationShip
             var newEducationInfoDocument = new EducationInfoDocumentEntity
             {
-                
+
                 AzureBlobFilename = residencyData.EvidenceFile.AzureBlobFilename,
                 EducationInfo = newEducationInfoEntity,
             };
@@ -170,7 +167,7 @@ namespace cred_system_back_end_app.Application.Common.Mappers.DTOToEntity
             //Document RelationShip
             var newEducationInfoDocument = new EducationInfoDocumentEntity
             {
-                
+
                 AzureBlobFilename = fellowshipDTO.EvidenceFile.AzureBlobFilename,
                 EducationInfo = newEducationInfoEntity,
             };
@@ -181,7 +178,7 @@ namespace cred_system_back_end_app.Application.Common.Mappers.DTOToEntity
 
         private static MedicalSchoolEntity GetMedicalSchoolEntity(MedicalSchoolDTO medicalSchool, int providerId)
         {
-           var newMedicalSchool = new MedicalSchoolEntity
+            var newMedicalSchool = new MedicalSchoolEntity
             {
                 PublicId = medicalSchool.PublicId,
                 ProviderId = providerId,
@@ -198,7 +195,7 @@ namespace cred_system_back_end_app.Application.Common.Mappers.DTOToEntity
             //Document RelationShip
             var newMedicalSchoolDocument = new MedicalSchoolDocumentEntity
             {
-                
+
                 AzureBlobFilename = medicalSchool.DiplomaFile.AzureBlobFilename,
                 MedicalSchool = newMedicalSchool,
             };
@@ -236,14 +233,14 @@ namespace cred_system_back_end_app.Application.Common.Mappers.DTOToEntity
             //Document RelationShip
             var newEducationInfoDocument = new EducationInfoDocumentEntity
             {
-                
+
                 AzureBlobFilename = internship.EvidenceFile.AzureBlobFilename,
                 EducationInfo = newEducationInfoEntity,
             };
 
             newEducationInfoEntity.EducationInfoDocument = newEducationInfoDocument;
             return newEducationInfoEntity;
-          
+
         }
         #endregion
     }

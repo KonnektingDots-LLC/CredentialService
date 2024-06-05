@@ -1,4 +1,4 @@
-﻿using cred_system_back_end_app.Application.Common.Constant;
+﻿using cred_system_back_end_app.Application.Common.Constants;
 
 namespace cred_system_back_end_app.Infrastructure.Smtp.Template
 {
@@ -150,7 +150,7 @@ namespace cred_system_back_end_app.Infrastructure.Smtp.Template
             </body>
             </html>";
 
-        public struct DelegateStatusUpdate 
+        public struct DelegateStatusUpdate
         {
             public const string ProviderNameToken = "[PROVIDER_NAME]";
 
@@ -195,7 +195,7 @@ namespace cred_system_back_end_app.Infrastructure.Smtp.Template
                         </p>    
                     </body>
                 </html>";
-            }
+        }
 
         public struct ProviderDelegateStatusUpdate
         {
@@ -265,7 +265,7 @@ namespace cred_system_back_end_app.Infrastructure.Smtp.Template
         }
 
         public struct InsurerProviderStatusRTPUpdate
-        {   
+        {
             public const string Subject = $@"OCS Credentialing System - Status Changed;";
 
             public const string Body = $@"

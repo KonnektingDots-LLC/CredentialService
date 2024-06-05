@@ -1,6 +1,6 @@
 ﻿using cred_system_back_end_app.Application.Common.Constants;
 using cred_system_back_end_app.Application.Common.Helpers;
-using cred_system_back_end_app.Infrastructure.DB.Entity;
+using cred_system_back_end_app.Domain.Entities;
 using cred_system_back_end_app.Infrastructure.PdfReport.DTO;
 
 namespace cred_system_back_end_app.Application.Common.Mappers.EntityToPDF
@@ -19,7 +19,7 @@ namespace cred_system_back_end_app.Application.Common.Mappers.EntityToPDF
 
                 // TODO: esto no me llega del frontend.
                 EduSchGradDateFrom = "",
-                
+
                 EduSchGradDateTo = $"{medicalSchoolData.GraduationMonth}/{medicalSchoolData.GraduationYear}",
                 EduSchSpecialty = medicalSchoolData.MSSpecialty,
             };

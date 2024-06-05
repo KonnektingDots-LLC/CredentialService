@@ -4,8 +4,8 @@
     {
         private IServiceScopeFactory _serviceScopeFactory;
 
-        public FireAndForgetService(IServiceScopeFactory serviceScopeFactory) 
-        { 
+        public FireAndForgetService(IServiceScopeFactory serviceScopeFactory)
+        {
             _serviceScopeFactory = serviceScopeFactory;
         }
 

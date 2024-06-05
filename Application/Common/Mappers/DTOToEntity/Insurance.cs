@@ -1,6 +1,6 @@
 ﻿using cred_system_back_end_app.Application.Common.Helpers;
-using cred_system_back_end_app.Application.UseCase.Submit.DTO;
-using cred_system_back_end_app.Infrastructure.DB.Entity;
+using cred_system_back_end_app.Domain.Entities;
+using cred_system_back_end_app.Domain.Services.Submit.DTO;
 
 namespace cred_system_back_end_app.Application.Common.Mappers.DTOToEntity
 {
@@ -49,7 +49,8 @@ namespace cred_system_back_end_app.Application.Common.Mappers.DTOToEntity
         public static ProfessionalLiabilityEntity GetProfessionalLiabilityEntities(ProfessionalLiabilityDTO professionalLiability, int providerId)
         {
             return new ProfessionalLiabilityEntity
-            {   ProviderId = providerId,
+            {
+                ProviderId = providerId,
                 // TODO: validar
                 ProfessionalLiabilityCarrierId = professionalLiability.ProfessionalLiabilityCarrierId,
                 InsurancePolicyEffectiveDate = DateTimeHelper.ParseDate(professionalLiability.InsurancePolicyEffectiveDate),

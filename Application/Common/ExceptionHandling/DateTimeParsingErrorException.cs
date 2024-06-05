@@ -2,15 +2,15 @@
 {
     public class DateTimeParsingErrorException : Exception
     {
-        public DateTimeParsingErrorException() 
-        { 
-        
+        public DateTimeParsingErrorException()
+        {
+
         }
 
-        public DateTimeParsingErrorException(string message) 
-            : base(message) 
-        { 
-        
+        public DateTimeParsingErrorException(string message)
+            : base(message)
+        {
+
         }
     }
 }

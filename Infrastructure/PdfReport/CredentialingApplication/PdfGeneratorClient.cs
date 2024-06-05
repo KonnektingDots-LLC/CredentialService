@@ -1,6 +1,5 @@
 ﻿using Newtonsoft.Json;
 using System.Text;
-using static System.Net.WebRequestMethods;
 
 namespace cred_system_back_end_app.Infrastructure.PdfReport.CredentialingApplication
 {
@@ -24,7 +23,7 @@ namespace cred_system_back_end_app.Infrastructure.PdfReport.CredentialingApplica
                 {
                     Method = HttpMethod.Post,
                     // keyvault here 
-                    RequestUri = new Uri($"https://func-credvali-prod-east-001.azurewebsites.net/api/{suffix}")
+                    RequestUri = new Uri($"{_configuration["AzureFunctionPdf"]}/{suffix}")
                 };
                 request.Content = content;
 

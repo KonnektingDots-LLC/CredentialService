@@ -1,11 +1,11 @@
-﻿using cred_system_back_end_app.Application.UseCase.Submit.DTO;
-using cred_system_back_end_app.Infrastructure.DB.Entity;
+﻿using cred_system_back_end_app.Domain.Entities;
+using cred_system_back_end_app.Domain.Services.Submit.DTO;
 
 namespace cred_system_back_end_app.Application.Common.Helpers
 {
     public static class PeriodHelper
     {
-        public static PeriodEntity GetPeriodEntity(PeriodDTO periodDTO) 
+        public static PeriodEntity GetPeriodEntity(PeriodDTO periodDTO)
         {
             return new PeriodEntity()
             {

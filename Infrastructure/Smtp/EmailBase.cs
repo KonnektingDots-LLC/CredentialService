@@ -1,33 +1,36 @@
-﻿using cred_system_back_end_app.Application.Common.ResponseDTO;
-using cred_system_back_end_app.Infrastructure.Smpt;
+﻿using cred_system_back_end_app.Application.DTO.Notifications;
+using cred_system_back_end_app.Application.DTO.Responses;
 
 namespace cred_system_back_end_app.Infrastructure.Smtp
 {
     public abstract class EmailBase
     {
-        private readonly SmtpClient _emailCase;
+        private readonly SmtpClient _smtpClient;
+        protected readonly string _subject;
+        protected string _template;
 
-        protected string Subject;
-
-        protected string Template;
-
-        public EmailBase(SmtpClient emailCase)
+        protected EmailBase(SmtpClient smtpClient, string subject, string template)
         {
-            _emailCase = emailCase;
+            _smtpClient = smtpClient;
+            _subject = subject;
+            _template = template;
         }
 
-        public abstract string GetBody();
+        public virtual string GetBody(NotificationEmailDto emailDto)
+        { return _template; }
 
-        public async Task<CommResponseDto> SendEmailAsync(string ToEmail)
+        public virtual async Task<(string, string)> SendEmailAsync(NotificationEmailDto emailDto)
         {
             var email = new SmtpClientRequest()
             {
-                Body = GetBody(),
-                Subject = Subject,
-                ToEmail = ToEmail,
+                Body = GetBody(emailDto),
+                Subject = _subject,
+                ToEmail = emailDto.ToEmail,
             };
 
-            return await _emailCase.SendEmailAsync(email);
+            CommResponseDto responseDto = await _smtpClient.SendEmailAsync(email);
+
+            return (responseDto.Subject, responseDto.Body);
         }
     }
 }

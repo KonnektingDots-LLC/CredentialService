@@ -1,13 +1,13 @@
-﻿using cred_system_back_end_app.Application.Common.ResponseDTO;
-using cred_system_back_end_app.Infrastructure.DB.Entity;
+﻿using cred_system_back_end_app.Application.DTO;
+using cred_system_back_end_app.Domain.Entities;
 
 namespace cred_system_back_end_app.Application.Common.Mappers.EntityToDTO
 {
     public static class PICSMapper
     {
-        public static ProviderResponseBaseDTO GetPICSResponseDTO(this ProviderInsurerCompanyStatusEntity picsEntity)
+        public static ProviderBaseDto GetPICSResponseDTO(this ProviderInsurerCompanyStatusEntity picsEntity)
         {
-            return new ProviderResponseBaseDTO
+            return new ProviderBaseDto
             {
                 ProviderId = picsEntity.Provider.Id,
                 Name = picsEntity.Provider.FirstName,

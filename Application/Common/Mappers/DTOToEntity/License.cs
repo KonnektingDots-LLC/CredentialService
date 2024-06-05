@@ -1,8 +1,7 @@
 ﻿using cred_system_back_end_app.Application.Common.Constants;
 using cred_system_back_end_app.Application.Common.Helpers;
-using cred_system_back_end_app.Application.UseCase.Submit.DTO;
-using cred_system_back_end_app.Infrastructure.DB.Entity;
-using cred_system_back_end_app.Infrastructure.PdfReport.DTO;
+using cred_system_back_end_app.Domain.Entities;
+using cred_system_back_end_app.Domain.Services.Submit.DTO;
 
 namespace cred_system_back_end_app.Application.Common.Mappers.DTOToEntity
 {
@@ -10,12 +9,12 @@ namespace cred_system_back_end_app.Application.Common.Mappers.DTOToEntity
     {
         public static ICollection<MedicalLicenseEntity> GetMedicalLicenseEntities(LicensesCertificatesDTO licensesData, int providerId)
         {
-            var medicalLicenses =  new List<MedicalLicenseEntity>
+            var medicalLicenses = new List<MedicalLicenseEntity>
             {
                 GetMedicalLicenseEntityFromPRMedical(licensesData, LicenseCertificatesTypes.PRMedicalLicense, providerId),
             };
 
-            if (licensesData.AssmcaCertificate != null) 
+            if (licensesData.AssmcaCertificate != null)
             {
                 var assmcaCerificate = GetMedicalLicenseEntity(licensesData.AssmcaCertificate, LicenseCertificatesTypes.ASSMCA, providerId);
 
@@ -27,15 +26,15 @@ namespace cred_system_back_end_app.Application.Common.Mappers.DTOToEntity
                 var deaCertificate = GetMedicalLicenseEntity(licensesData.DeaCertificate, LicenseCertificatesTypes.DEA, providerId);
 
                 medicalLicenses.Add(deaCertificate);
-            }            
-            
+            }
+
             if (licensesData.PtanCertificate != null)
             {
                 var ptanCertificate = GetMedicalLicenseEntity(licensesData.PtanCertificate, LicenseCertificatesTypes.PTAN, providerId);
 
                 medicalLicenses.Add(ptanCertificate);
-            }            
-            
+            }
+
             if (licensesData.TelemedicineCertificate != null)
             {
                 var telemedicineCertificate = GetMedicalLicenseEntity(licensesData.TelemedicineCertificate, LicenseCertificatesTypes.TELEMEDICINE, providerId);
@@ -43,7 +42,7 @@ namespace cred_system_back_end_app.Application.Common.Mappers.DTOToEntity
                 medicalLicenses.Add(telemedicineCertificate);
             }
 
-            if (licensesData.MembershipCertificate != null) 
+            if (licensesData.MembershipCertificate != null)
             {
                 var collegiateMembership = GetMedicalLicenseEntity(licensesData.MembershipCertificate, LicenseCertificatesTypes.MEMBERSHIP, providerId);
 
