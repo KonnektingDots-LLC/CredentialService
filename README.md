@@ -1,20 +1,33 @@
 # Introduction 
-TODO: Give a short introduction of your project. Let this section explain the objectives or the motivation behind this project. 
+This ASP.Net Core API serves the resources needed by the credentialing web application. 
 
-# Getting Started
-TODO: Guide users through getting your code up and running on their own system. In this section you can talk about:
-1.	Installation process
-2.	Software dependencies
-3.	Latest releases
-4.	API references
+# External Dependencies
+* Azure Function - The function is defined by another proyect.
+* Azure Storage
+* Azure B2C
+* Azure SQL Server
 
-# Build and Test
-TODO: Describe and show how to build your code and run the tests. 
+# Prerequisites
+* [ASP.NET Core 6](https://dotnet.microsoft.com/en-us/download/dotnet/6.0)
+* External dependencies must be available and in reach by the API.
 
-# Contribute
-TODO: Explain how other users and developers can contribute to make your code better. 
+# Build and Test (Developer environment)
+Add a `Secrets.json` file with the required secrets, for example:
+```
+{
+  "ConnectionStrings:SqlServer": "<<SQL Server Connection String>>",
+  "AzureStorageAccount:AzureBlobStorageKey": "DefaultEndpointsProtocol=https;AccountName=<<Account Name>>;AccountKey=<<Account key>>;EndpointSuffix=core.windows.net",
+  "SmtpSettings:SmtpPass": "<<SMTP Password>>",
+  "SmtpSettings:SenderEmail": "<<SMTP default sender email>>",
+  "SmtpSettings:Username": "<<SMTP username>>",
+  "FEUrl": "<<The public URL for the Web App>>",
+  "AzureFunctionPdf": "<<The public URL for the Azure function>>",
+}
+```
 
-If you want to learn more about creating good readme files then refer the following [guidelines](https://docs.microsoft.com/en-us/azure/devops/repos/git/create-a-readme?view=azure-devops). You can also seek inspiration from the below readme files:
-- [ASP.NET Core](https://github.com/aspnet/Home)
-- [Visual Studio Code](https://github.com/Microsoft/vscode)
-- [Chakra Core](https://github.com/Microsoft/ChakraCore)
+To build the project run these commands from the CLI in the directory of the project.
+```
+dotnet build
+dotnet run
+```
+These will install any needed dependencies, build the project, and run the project respectively.
