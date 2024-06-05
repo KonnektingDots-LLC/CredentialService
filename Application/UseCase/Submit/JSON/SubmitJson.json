@@ -1,0 +1,583 @@
+{
+  "setup": {
+    "providerId": 34,
+    "providerEmail": "email.com",
+    "pcpApplies": true,
+    "hasStarted": true,
+    "currentStep": "string",
+    "professionalLiabilityApplies": true,
+    "f330applies": true,
+    "hospitalAffiliationsApplies": true
+  },
+  "individualPracticeProfile": {
+    "citizenshipTypeId": 1,
+    "taxId": "123456789",
+    "prMedicalLicenseNumber": "987654320",
+    "npiCertificateFile": {
+      "name": "filename.pdf",
+      "documentTypeId": 1
+    },
+    "npiCertificateNumber": "1111111112",
+    "negativePenalCertificateFile": {
+      "name": "Credential System - Incorporated.pdf",
+      "documentTypeId": 2
+    },
+    "negativePenalCertificateIssuedDate": "2023-09-05",
+    "negativePenalCertificateExpDate": "2023-09-29",
+    "curriculumVitaeFile": {
+      "name": "Credential System - Additional Information.pdf",
+      "documentTypeId": 3
+    },
+    "planAccept": [
+      3,
+      8,
+      7,
+      9
+    ],
+    "ssn": "123456789",
+    "idType": 4,
+    "idFile": {
+      "name": "Form Information.pdf",
+      "documentTypeId": 4
+    },
+    "idExpDate": "2023-09-29"
+  },
+  "incorporatedPracticeProfile": [
+    {
+      "corporateTaxType": 2,
+      "participateMedicaid": true,
+      "addressInfo": {
+        "isPhysicalAddressSameAsMail": true,
+        "physical": {
+          "stateId": 15,
+          "address1": "Estancias de Nito Marty #315",
+          "address2": "",
+          "city": "Cabo Rojo",
+          "zipcode": "00623"
+        },
+        "mail": {
+          "address1": "Estancias de Nito Marty #315",
+          "address2": "",
+          "city": "Cabo Rojo",
+          "zipcode": "00623",
+          "stateId": 0
+        }
+      },
+      "corporatePracticeName": "This is my corporate name",
+      "incorporationEffectiveDate": "2023-08-31",
+      "corporationNpiNumber": "1111111112",
+      "renderingNpiNumber": "1111111112",
+      "corporateTaxNumber": "123456789",
+      "corporatePhoneNumber": "1234545565",
+      "employerIDAddressInfo": {
+        "stateId": 15,
+        "address1": "Calle Sol, Vereda la buena vida",
+        "address2": "",
+        "city": "Hormigueros",
+        "zipcode": "123"
+      },
+      "entityTypeId": 5,
+      "corporationCertificateFile": {
+        "name": "Form Information.pdf",
+        "documentTypeId": 10
+      },
+      "corporateNpiCertificateFile": {
+        "name": "filename.pdf",
+        "documentTypeId": 11
+      },
+      "w9File": {},
+      "medicaidIdLocation": "",
+      "specialtyTypeId": null
+    }
+  ],
+  "addressAndLocation": [
+    {
+      "addressPrincipalTypeId": null,
+      "isActive": true,
+      "isAcceptingNewPatients": true,
+      "isComplyWithAda": true,
+      "adaCompliantComment": "",
+      "medicalId": "9876543211",
+      "addressInfo": {
+        "isPhysicalAddressSameAsMail": true,
+        "physical": {
+          "stateId": 15,
+          "address1": "Estancias de Nito Marty #315",
+          "address2": "",
+          "city": "Cabo Rojo",
+          "zipcode": "00623"
+        },
+        "mail": {
+          "address1": "Estancias de Nito Marty #315",
+          "address2": "",
+          "city": "Cabo Rojo",
+          "zipcode": "00623",
+          "stateId": 0
+        }
+      },
+      "serviceHours": [
+        {
+          "dayOfWeek": 0,
+          "hourFrom": "9:00",
+          "hourTo": "6:00",
+          "isClosed": true
+        },
+        {
+          "dayOfWeek": 1,
+          "hourFrom": "9:00",
+          "hourTo": "6:00",
+          "isClosed": true
+        },
+        {
+          "dayOfWeek": 2,
+          "hourFrom": "9:00",
+          "hourTo": "6:00",
+          "isClosed": true
+        },
+        {
+          "dayOfWeek": 3,
+          "hourFrom": "9:00",
+          "hourTo": "6:00",
+          "isClosed": true
+        },
+        {
+          "dayOfWeek": 4,
+          "hourFrom": "9:00",
+          "hourTo": "6:00",
+          "isClosed": true
+        },
+        {
+          "dayOfWeek": 5,
+          "hourFrom": "9:00",
+          "hourTo": "6:00",
+          "isClosed": true
+        },
+        {
+          "dayOfWeek": 6,
+          "hourFrom": "9:00",
+          "hourTo": "6:00",
+          "isClosed": true
+        }
+      ]
+    }
+  ],
+  "specialtiesAndSubspecialties": {
+    "specialties": [
+      {
+        "id": 8,
+        "evidenceFile": {
+          "name": "filename.pdf",
+          "documentTypeId": 13
+        }
+      },
+      {
+        "id": 22,
+        "evidenceFile": {
+          "name": "Individual and Incorporated Provider Credentialing Application.pdf",
+          "documentTypeId": 13
+        }
+      }
+    ],
+    "subspecialties": [
+      {
+        "id": 18,
+        "evidenceFile": {
+          "name": "Form Information.pdf",
+          "documentTypeId": 14
+        }
+      }
+    ]
+  },
+  "pcp": {
+    "addressInfo": {
+      "isPhysicalAddressSameAsMail": true,
+      "physical": {
+        "stateId": 10,
+        "address1": "Calle flores #12",
+        "address2": "",
+        "city": "Coamo",
+        "zipcode": "11222"
+      },
+      "mail": {
+        "address1": "Calle flores #12",
+        "address2": "",
+        "city": "Coamo",
+        "zipcode": "11222",
+        "stateId": 0
+      }
+    },
+    "pmgName": "This is the PMG name",
+    "billingNpiNumber": "1111111112",
+    "taxIdGroup": "9876543201",
+    "medicaidIdLocation": "111111111",
+    "npiGroupNumber": "1111111112",
+    "endorsementLetterDate": "2023-09-22",
+    "endorsementLetterFile": {
+      "name": "Credential System - Additional Information.pdf",
+      "documentTypeId": 15
+    },
+    "employerId": "987654322",
+    "contactNumber": "6565432344",
+    "email": "g@example.com",
+    "pcpOrSpecialistId": 0, // PCP sends this as 1 always. F330 could be 1 or 2
+    "specifyPrimaryCareId": 3, // If pcpOrSpecialistId = 1, this must be nonzero
+    "typeOfSpecialistId": 1, // If pcpOrSpecialistId = 2, this must be nonzero
+    "serviceHours": [
+      {
+        "dayOfWeek": 0,
+        "hourFrom": "9:00",
+        "hourTo": "6:00",
+        "isClosed": true
+      },
+      {
+        "dayOfWeek": 1,
+        "hourFrom": "9:00",
+        "hourTo": "6:00",
+        "isClosed": true
+      },
+      {
+        "dayOfWeek": 2,
+        "hourFrom": "9:00",
+        "hourTo": "6:00",
+        "isClosed": true
+      },
+      {
+        "dayOfWeek": 3,
+        "hourFrom": "9:00",
+        "hourTo": "6:00",
+        "isClosed": true
+      },
+      {
+        "dayOfWeek": 4,
+        "hourFrom": "9:00",
+        "hourTo": "6:00",
+        "isClosed": true
+      },
+      {
+        "dayOfWeek": 5,
+        "hourFrom": "9:00",
+        "hourTo": "6:00",
+        "isClosed": true
+      },
+      {
+        "dayOfWeek": 6,
+        "hourFrom": "9:00",
+        "hourTo": "6:00",
+        "isClosed": true
+      }
+    ]
+  },
+  "f330": {
+    "addressInfo": {
+      "isPhysicalAddressSameAsMail": true,
+      "physical": {
+        "stateId": 15,
+        "address1": "Calle flores #12",
+        "address2": "",
+        "city": "Loiza",
+        "zipcode": "11222"
+      },
+      "mail": {
+        "address1": "Calle flores #12",
+        "address2": "",
+        "city": "Loiza",
+        "zipcode": "11222",
+        "stateId": 0
+      }
+    },
+    "pmgName": "Federally 330 PMG name",
+    "billingNpiNumber": "1111111112",
+    "taxIdGroup": "1234567820",
+    "medicaidIdLocation": "098765432",
+    "npiGroupNumber": "1111111112",
+    "endorsementLetterFile": {},
+    "employerId": "111111111",
+    "contactNumber": "4342334454",
+    "email": "g@example.com",
+    "careTypeId": 1,
+    "pcpSpecialtyId": 1,
+    "specialistInput": "0",
+    "serviceHours": [
+      {
+        "dayOfWeek": 0,
+        "hourFrom": "9:00",
+        "hourTo": "6:00",
+        "isClosed": true
+      },
+      {
+        "dayOfWeek": 1,
+        "hourFrom": "9:00",
+        "hourTo": "6:00",
+        "isClosed": true
+      },
+      {
+        "dayOfWeek": 2,
+        "hourFrom": "9:00",
+        "hourTo": "6:00",
+        "isClosed": true
+      },
+      {
+        "dayOfWeek": 3,
+        "hourFrom": "9:00",
+        "hourTo": "6:00",
+        "isClosed": true
+      },
+      {
+        "dayOfWeek": 4,
+        "hourFrom": "9:00",
+        "hourTo": "6:00",
+        "isClosed": true
+      },
+      {
+        "dayOfWeek": 5,
+        "hourFrom": "9:00",
+        "hourTo": "6:00",
+        "isClosed": true
+      },
+      {
+        "dayOfWeek": 6,
+        "hourFrom": "9:00",
+        "hourTo": "6:00",
+        "isClosed": true
+      }
+    ]
+  },
+  "hospitalAffiliations": {
+    "primary": {
+      "hospitalListId": 56,
+      "hospitalPrivilegesType": 5,
+      "providerStartingMonth": 12,
+      "providerStartingYear": 2009,
+      "providerEndingMonth": 9,
+      "providerEndingYear": 2021,
+      "hospitalListOther": "",
+      "hospitalPrivilegesTypeOther": ""
+    },
+    "secondary": {
+      "hospitalListId": 2,
+      "hospitalPrivilegesType": 3,
+      "providerStartingMonth": 8,
+      "providerStartingYear": 2019,
+      "providerEndingMonth": 7,
+      "providerEndingYear": 2012,
+      "hospitalListOther": "",
+      "hospitalPrivilegesTypeOther": ""
+    }
+  },
+  "educationAndTraining": {
+    "medicalSchool": [
+      {
+        "schoolName": "aaa",
+        "addressInfo": {
+          "address1": "Estancias de Nito Marty #315",
+          "address2": "",
+          "city": "Cabo Rojo",
+          "zipcode": "00623",
+          "stateId": 0
+        },
+        "graduationMonth": 12,
+        "graduationYear": 2019,
+        "specialty": "aaa",
+        "specialtyCompletionDate": "2023-09-21",
+        "specialtyDegree": "aaa",
+        "diplomaFile": {
+          "name": "Form Information.pdf",
+          "documentTypeId": 18
+        }
+      }
+    ],
+    "internship": [
+      {
+        "institutionName": "College community",
+        "addressInfo": {
+          "stateId": 50,
+          "address1": "Urb. Las flores florecen",
+          "address2": "",
+          "city": "Cabo Rojo",
+          "zipcode": "12345"
+        },
+        "attendance": {
+          "fromMonth": 3,
+          "fromYear": 2013,
+          "toMonth": 12,
+          "toYear": 2019
+        },
+        "program-type": "aaaa",
+        "evidenceFile": {
+          "name": "Credential System - Incorporated.pdf",
+          "documentTypeId": 29
+        }
+      }
+    ],
+    "residency": [
+      {
+        "institutionName": "residency",
+        "addressInfo": {
+          "stateId": 50,
+          "address1": "Urb. Las flores florecen",
+          "address2": "",
+          "city": "Cabo Rojo",
+          "zipcode": "12345"
+        },
+        "attendance": {
+          "fromMonth": 9,
+          "fromYear": 2013,
+          "toMonth": 12,
+          "toYear": 2019
+        },
+        "programType": "gfrsda",
+        "completionDate": "2023-09-07",
+        "evidenceFile": {
+          "name": "Global Inclusion Training.pdf",
+          "documentTypeId": 30
+        },
+        "postGraduateCompletionDate": "2023-09-27"
+      }
+    ],
+    "fellowship": [
+      {
+        "institutionName": "",
+        "addressInfo": {
+          "stateId": 50,
+          "address1": "Urb. Las flores florecen",
+          "address2": "",
+          "city": "Cabo Rojo",
+          "zipcode": "12345"
+        },
+        "attendance": {
+          "fromMonth": 0,
+          "fromYear": 0,
+          "toMonth": 0,
+          "toYear": 0
+        },
+        "programType": "",
+        "completionDate": "",
+        "evidenceFile": {
+          "name": "Form Information.pdf",
+          "documentTypeId": 18
+        }
+      }
+    ],
+    "boardCertificates": [
+      {
+        "certificateFile": {
+          "name": "Cybersecurity - 1191006152023012058.pdf",
+          "documentTypeId": 20
+        },
+        "specialtyBoard": [
+          3
+        ],
+        "issuedDate": "2023-08-30",
+        "expirationDate": "2023-09-30"
+      }
+    ],
+    "licensesCertificates": {
+      "prMedicalLicenseNumber": "123456789",
+      "prMedicalLicenseExpDate": "2023-09-30",
+      "prMedicalLicenseFile": {
+        "name": "Intro - 1176906152023012021.pdf",
+        "documentTypeId": 19
+      },
+      "assmcaCertificate": {
+        "haveCertificate": "yes",
+        "certificateNumber": "765432344",
+        "certificateFile": {
+          "name": "Individual and Incorporated Provider Credentialing Application.pdf",
+          "documentTypeId": 33
+        },
+        "expDate": "2023-09-22"
+      },
+      "deaCertificate": {
+        "haveCertificate": "no",
+        "certificateNumber": "",
+        "certificateFile": {
+          "name": "Form Information.pdf",
+          "documentTypeId": 18
+        },
+        "expDate": ""
+      },
+      "membershipCertificate": {
+        "haveCertificate": "",
+        "certificateNumber": "987654321",
+        "certificateFile": {
+          "name": "Credential System.pdf",
+          "documentTypeId": 34
+        },
+        "expDate": "2023-09-22"
+      },
+      "ptanCertificate": {
+        "haveCertificate": "no",
+        "certificateNumber": "",
+        "certificateFile": {
+          "name": "Form Information.pdf",
+          "documentTypeId": 18
+        },
+        "expDate": ""
+      },
+      "telemedicineCertificate": {
+        "haveCertificate": "no",
+        "certificateNumber": "",
+        "certificateFile": {
+          "name": "Form Information.pdf",
+          "documentTypeId": 18
+        },
+        "expDate": ""
+      }
+    }
+  },
+  "criminalRecord": {
+    "negativePenalRecordFile": {
+      "name": "Form Information.pdf",
+      "documentTypeId": 21
+    },
+    "negativePenalRecordsDate": "2023-09-21"
+  },
+  "insurance": {
+    "professionalLiability": {
+      "isSelected": true,
+      "professionalLiabilityCarrierId": "3",
+      "policyNumber": "12345",
+      "coverageAmountPerOcurrence": "5433",
+      "coverageAggregateLimit": "aggregate limit",
+      "insurancePolicyEffectiveDate": "2023-09-05",
+      "insurancePolicyExpDate": "2023-09-22",
+      "certificateCoverageFile": {
+        "name": "filename.pdf",
+        "documentTypeId": 23
+      }
+    },
+    "malpractice": {
+      "malpracticeCarrierId": "2",
+      "malpracticeCarrierOther": "",
+      "insurancePolicyEffectiveDate": "2023-09-06",
+      "insurancePolicyExpDate": "2023-09-22",
+      "policyNumber": "12345",
+      "coverageAmountPerOcurrence": "43 per inch",
+      "coverageAggregateLimit": "32% limit",
+      "certificateCoverageFile": {
+        "name": "Individual and Incorporated Provider Credentialing Application.pdf",
+        "documentTypeId": 22
+      },
+      "oigCaseNumber": [
+        "0013345",
+        "0013345",
+        "0013345"
+      ]
+    },
+    "actionExplanationFormFile": {
+      "name": "filename.pdf",
+      "documentTypeId": 24
+    },
+    "link1File": {
+      "name": "filename.pdf",
+      "documentTypeId": 24
+    },
+    "link2File": {},
+    "link3File": {},
+    "link4File": {}
+  },
+  "attestation": {
+    "isAccept": false,
+    "attestationDate" :  "01/01/2000"
+  }
+}

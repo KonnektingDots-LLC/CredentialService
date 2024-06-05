@@ -1,0 +1,67 @@
+﻿# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+  branches:
+    include:      
+      - release
+      - release-prod
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+variables:
+  
+  project: '*.csproj'
+  imageRepository: 'cred-validation-be'
+  dockerfilePath: '$(Build.SourcesDirectory)/Dockerfile'
+
+  ${{ if eq(variables['Build.SourceBranchName'], 'release') }}:
+    azureSubscription: 'OCS_SP_CREDITVALID'
+    appName: 'app-credvali-test-east-be'
+    containerRegistryConnection: 'OCS_CONTAINER_REGISTRY'
+    containerRegistry: 'crcredvalitesteast001.azurecr.io'
+    registryUser: $(REGISTRY_USERNAME)
+    registryPass: $(REGISTRY_PASSWORD)
+    tag: 0.0.100 #'$(Build.BuildId)'
+    env: 'Test'
+  ${{ if eq(variables['Build.SourceBranchName'], 'release-prod') }}:
+    azureSubscription: 'OCS_SP_CREDITVALID_PROD'
+    appName: 'app-credvali-prod-east-be'
+    containerRegistryConnection: 'OCS_CONTAINER_REGISTRY_PROD'
+    containerRegistry: 'crcredvaliprodeast001.azurecr.io'
+    registryUser: $(REGISTRY_USERNAME_PROD)
+    registryPass: $(REGISTRY_PASSWORD_PROD)
+    tag: 1.3.0 #'$(Build.BuildId)'
+    env: 'Production'
+
+
+stages:
+  - stage: Deploying
+    displayName: "Deploying code to test"
+    jobs:
+      - job: BuildImageAndPush
+        steps:
+        - task: DotNetCoreCLI@2
+          displayName: "Build"
+          inputs:
+            command: "build"
+            projects: '$(project)'
+            arguments: '--configuration $(buildConfiguration)'
+        - task: Docker@2
+          displayName: Build docker image
+          inputs:
+            command: buildAndPush
+            containerRegistry: $(containerRegistryConnection)
+            repository: $(imageRepository)
+            tags: |
+              $(tag)
+        - task: AzureWebAppContainer@1
+          inputs:
+            azureSubscription: $(azureSubscription)
+            appName: $(appName)
+            containers: $(imageRepository)
+            imageName: $(containerRegistry)/$(imageRepository):$(tag)
+            appSettings: '-ASPNETCORE_ENVIRONMENT $(env) -DOCKER_REGISTRY_SERVER_URL $(containerRegistry) -DOCKER_REGISTRY_SERVER_USERNAME $(registryUser) -DOCKER_REGISTRY_SERVER_PASSWORD $(registryPass)'

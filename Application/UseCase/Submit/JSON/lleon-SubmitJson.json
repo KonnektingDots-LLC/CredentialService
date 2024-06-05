@@ -1,0 +1,510 @@
+{
+  "setup": {
+    "providerId": 1,
+    "role": 0,
+    "pcpApplies": true,
+    "professionalLiabilityApplies": true,
+    "f330applies": true,
+    "hospitalAffiliationsApplies": true
+  },
+  "f330": {
+    "pmgName": "Federally Qualified Health Centers (330)", //Name
+    "billingNpiNumber": "11111111234", //Billingnpi
+    "taxIdGroup": "1111111111", //Taxidgroup
+    "npiGroupNumber": "111111111111", //npiGroup
+    "medicaidIdLocation": "Medicaid Id 12345", //Medicaididlocation
+    "addressInfo": {
+      "isPhysicalAddressSameAsMail": false,
+      "physical": {
+        "name": "",
+        "address1": "",
+        "address2": "",
+        "City": "",
+        "StateId": "",
+        "ZipCode": "",
+        "County": ""
+      },
+      "mail": {
+        "name": "",
+        "address1": "",
+        "address2": "",
+        "City": "",
+        "StateId": "",
+        "ZipCode": "",
+        "County": ""
+      }
+    },
+    "endorsementLetterDate": "NanNanNan", //Endorsemmentletterdate
+    "endorsementLetter": "name.pdf",
+    "employerId": "a", //Employerid
+    "contactNumber": "a", //Contactphone
+    "email": "a", //Contactemail
+    "careTypeId": 1, //PCP or Specialty
+    "careOptionId": 3, //Specialtytypeid
+    "serviceHours": {
+      "monday": {
+        "hourFrom": "",
+        "hourTo": "",
+        "isClosed": true
+      },
+      "tuesday": {
+        "hourFrom": "",
+        "hourTo": "",
+        "isClosed": true
+      },
+      "wednesday": {
+        "hourFrom": "",
+        "hourTo": "",
+        "isClosed": true
+      },
+      "thursday": {
+        "hourFrom": "",
+        "hourTo": "",
+        "isClosed": true
+      },
+      "friday": {
+        "hourFrom": "",
+        "hourTo": "",
+        "isClosed": true
+      },
+      "saturday": {
+        "hourFrom": "",
+        "hourTo": "",
+        "isClosed": true
+      },
+      "sunday": {
+        "hourFrom": "",
+        "hourTo": "",
+        "isClosed": true
+      }
+    }
+  },
+  "individualPracticeProfile": {
+    "citizenshipTypeId": 1, //citizenOrForeigner
+    "citizenIdType": 1, //Se relaciona con Document
+    "taxId": "11111",
+    "prMedicalLicenseNumber": "11111",
+    "npiCertificateFile": "Credential System.Pdf", //Se relaciona con Document
+    "npiCertificateNumber": "1111111111",
+    "negativePenalCertificateFile": "Credential System.Pdf", //Se relaciona con Document
+    "negativePenalCertificateIssuedDate": "20230817", //Se relaciona con Document
+    "negativePenalCertificateExpDate": "20230813", //Se relaciona con Document
+    "curriculumVitaeFile": "certificate_of_completion_Vue.Js.Pdf", //Se relaciona con Document
+    "citishipNumber": "111111111", //ssn or empty
+    "citizenIdFile": "Software Developer I [Jd].Pdf", //Se relaciona con Document
+    "citizenIdExpDate": "20230817", //Se relaciona con Document
+    "planAccept": [
+      {
+        "id": 1,
+        "name": "Triple S - Comercial"
+      }
+    ]
+  },
+  "incorporatedPracticeProfile": [
+    {
+      "corporatePracticeName": "testm1",
+      "incorporationEffectiveDate": "20230804",
+      "corporationNpiNumber": "111111111",
+      "renderingNpiNumber": "11111111111",
+      "corporateTaxNumber": "111111111",
+      "SpecialtyTypeId": 1,
+      "subspecialty": [
+        {
+          "id": 1,
+          "name": ""
+        }
+      ],
+      "medicaidIdLocation": "Medicaid Id 12345", //Medicaididlocation
+      "addressInfo": {
+        "isPhysicalAddressSameAsMail": false,
+        "physical": {
+          "name": "",
+          "address1": "",
+          "address2": "",
+          "City": "",
+          "StateId": "",
+          "ZipCode": "",
+          "County": ""
+        },
+        "mail": {
+          "name": "",
+          "address1": "",
+          "address2": "",
+          "City": "",
+          "StateId": "",
+          "ZipCode": "",
+          "County": ""
+        }
+      },
+      "corporatePhoneNumber": "a",
+      "employeerIDAddressInfo": {
+        "physical": {
+          "name": "",
+          "address1": "",
+          "address2": "",
+          "City": "",
+          "StateId": "",
+          "ZipCode": "",
+          "County": ""
+        }
+      },
+      "entityTypeId": 1,
+      "corporationCertificateFile": "Credential System.Pdf", //Se relaciona con Document
+      "corporateNpiCertificateFile": "Software Developer I [Jd].Pdf", //Se relaciona con Document
+      "w9File": "name.pdf" //Se relaciona con Document
+    }
+  ],
+  "addressAndLocation": [
+    {
+      "addressPrincipalTypeId": 2,
+      "isActive": true, //true = Active and false is closed
+      "isAcceptingNewPatient": false,
+      "isComplyWithAda": true,
+      "medicalId": "11110",
+      "adaComplyComment": "Comment",
+      "isPhysicalAddressSameAsMail": false,
+      "physical": {
+        "Name": "",
+        "address1": "",
+        "address2": "",
+        "City": "",
+        "StateId": "",
+        "ZipCode": "",
+        "County": ""
+      },
+      "mail": {
+        "Name": "",
+        "address1": "",
+        "address2": "",
+        "City": "",
+        "StateId": "",
+        "ZipCode": "",
+        "County": ""
+      },
+      "serviceHours": {
+        "monday": {
+          "hourFrom": "",
+          "hourTo": "",
+          "isClosed": true
+        },
+        "tuesday": {
+          "hourFrom": "",
+          "hourTo": "",
+          "isClosed": true
+        },
+        "wednesday": {
+          "hourFrom": "",
+          "hourTo": "",
+          "isClosed": true
+        },
+        "thursday": {
+          "hourFrom": "",
+          "hourTo": "",
+          "isClosed": true
+        },
+        "friday": {
+          "hourFrom": "",
+          "hourTo": "",
+          "isClosed": true
+        },
+        "saturday": {
+          "hourFrom": "",
+          "hourTo": "",
+          "isClosed": true
+        },
+        "sunday": {
+          "hourFrom": "",
+          "hourTo": "",
+          "isClosed": true
+        }
+      }
+    }
+  ],
+  "specialtiesAndSubspecialties": {
+    "specialty": [
+      {
+        "id": 1,
+        "name": "General",
+        "evidenceFilename": "Credential System.Pdf"
+      }
+    ],
+    "subspecialty": [
+      {
+        "id": 1,
+        "name": "",
+        "evidenceFilename": ""
+      }
+    ]
+  },
+  "pcp": {
+    "pmgName": "Federally Qualified Health Centers (330)", //Name
+    "billingNpiNumber": "11111111234", //Billingnpi
+    "taxIdGroup": "1111111111", //Taxidgroup
+    "npiGroupNumber": "111111111111", //npiGroup
+    "medicaidIdLocation": "Medicaid Id 12345", //Medicaididlocation
+    "addressInfo": {
+      "isPhysicalAddressSameAsMail": false,
+      "physical": {
+        "name": "",
+        "address1": "",
+        "address2": "",
+        "City": "",
+        "StateId": "",
+        "ZipCode": "",
+        "County": ""
+      },
+      "mail": {
+        "name": "",
+        "address1": "",
+        "address2": "",
+        "City": "",
+        "StateId": "",
+        "ZipCode": "",
+        "County": ""
+      }
+    },
+    "endorsementLetterDate": "NanNanNan", //Endorsemmentletterdate
+    "endorsementLetter": "name.pdf",
+    "employerId": "a", //Employerid
+    "contactNumber": "a", //Contactphone
+    "email": "a", //Contactemail
+    "careTypeId": 1, //PCP or Specialty
+    "careOptionId": 3, //PCP Selection
+    "SpecialtyInput" : "User Input",
+    "serviceHours": {
+      "monday": {
+        "hourFrom": "",
+        "hourTo": "",
+        "isClosed": true
+      },
+      "tuesday": {
+        "hourFrom": "",
+        "hourTo": "",
+        "isClosed": true
+      },
+      "wednesday": {
+        "hourFrom": "",
+        "hourTo": "",
+        "isClosed": true
+      },
+      "thursday": {
+        "hourFrom": "",
+        "hourTo": "",
+        "isClosed": true
+      },
+      "friday": {
+        "hourFrom": "",
+        "hourTo": "",
+        "isClosed": true
+      },
+      "saturday": {
+        "hourFrom": "",
+        "hourTo": "",
+        "isClosed": true
+      },
+      "sunday": {
+        "hourFrom": "",
+        "hourTo": "",
+        "isClosed": true
+      }
+    }
+  },
+  "hospitalAffiliations": {
+    "primary": {
+      "hospitalListId": 1,
+      "hospitalPrivilegesType": "ConsultingAfiliate",
+      "providerStartingMonth": 9,
+      "providerStartingYear": 2023,
+      "providerEndingMonth": 12,
+      "providerEndingYear": 2013,
+      "HospitalListOther": "Hosp Name as other"
+    },
+    "secondary": {
+      "hospitalListId": 2,
+      "hospitalPrivilegesType": "ConsultingAfiliate",
+      "providerStartingMonth": 9,
+      "providerStartingYear": 2023,
+      "providerEndingMonth": 12,
+      "providerEndingYear": 2013,
+      "HospitalListOther": "Hosp Name as other"
+    }
+  },
+
+  "educationAndTraining": {
+      "medicalSchool": [
+        {
+          "schoolName": "Aaa",
+          "addressInfo": {
+            "Name": "",
+            "address1": "",
+            "address2": "",
+            "City": "",
+            "StateId": "",
+            "ZipCode": "",
+            "County": ""
+          },
+          "attendance": {
+            "FromMonth": 1,
+            "FromYear": 2023,
+            "ToMonth": 1,
+            "ToYear": 2023
+          },
+          "graduation": {
+            "FromMonth": 9,
+            "FromYear": 2023,
+            "ToMonth": 9,
+            "ToYear": 2023
+          },
+          "specialty": "a",
+          "specialtyCompletionDate": "20230803",
+          "specialtyDegree": "a",
+          "diplomaFile": "Credential System.Pdf"
+        }
+      ],
+      "internship": [
+        {
+          "addressInfo": {
+            "Name": "",
+            "address1": "",
+            "address2": "",
+            "City": "",
+            "StateId": "",
+            "ZipCode": "",
+            "County": ""
+          },
+          "institutionName": "a",
+          "attendance": {
+            "FromMonth": 1,
+            "FromYear": 2023,
+            "ToMonth": 1,
+            "ToYear": 2023
+          },
+          "programType": "a",
+          "evidenceFile": "Software Developer I [Jd].Pdf"
+        }
+      ],
+      "residency": [
+        {
+          "addressInfo": {
+            "Name": "",
+            "address1": "",
+            "address2": "",
+            "City": "",
+            "StateId": "",
+            "ZipCode": "",
+            "County": ""
+          },
+          "institutionName": "a",
+          "attendance": {
+            "FromMonth": 1,
+            "FromYear": 2023,
+            "ToMonth": 1,
+            "ToYear": 2023
+          },
+          "programType": "a",
+          "completionDate": "20230817",
+          "evidenceFile": "Credential System.Pdf",
+          "postGraduateCompletionDate": "20230818"//missed field BE
+        }
+      ],
+      "fellowship": [
+        {
+          "addressInfo": {
+            "Name": "",
+            "address1": "",
+            "address2": "",
+            "City": "",
+            "StateId": "",
+            "ZipCode": "",
+            "County": ""
+          },
+          "institutionName": "a",
+          "attendance": {
+            "FromMonth": 1,
+            "FromYear": 2023,
+            "ToMonth": 1,
+            "ToYear": 2023
+          },
+          "programType": "a",
+          "completionDate": "20230803",
+          "evidenceFile": "Software Developer I [Jd].Pdf"
+        }
+      ],
+      "boardCertificate": [
+        {
+          "specialtyBoard": "a",
+          "certificateFile": "certificate_of_completion_Vue.Js.Pdf",
+          "issuedDate": "20230816",
+          "expirationDate": "20230814"
+        }
+      ],
+    "licensesCertificates": {
+      "prMedicalLicenseNumber": "11111",
+      "prMedicalLicenseExpDate": "20230815", //se relaciona con Documento
+      "prMedicalLicenseFile": "Credential System.Pdf", //se relaciona con Documento
+      "assmcaCertificate": {
+        "haveCertificate": "Yes",
+        "certificateNumber": "11011",
+        "certificateFilename": "Software Developer I [Jd].Pdf",
+        "expDate": "20230816"
+      },
+      "deaCertificate": {
+        "haveCertificate": "No",
+        "certificateNumber": "",
+        "certificateFilename": "",
+        "expDate": ""
+      },
+      "membershipCertificate": {
+        "haveCertificate": "No",
+        "certificateNumber": "",
+        "certificateFilename": "",
+        "expDate": ""
+      },
+      "ptanCertificate": {
+        "haveCertificate": "No",
+        "certificateNumber": "",
+        "certificateFilename": "",
+        "expDate": ""
+      },
+      "telemedicineCertificate": {
+        "haveCertificate": "No",
+        "certificateNumber": "",
+        "certificateFilename": "",
+        "expDate": ""
+      }
+    }
+  },
+  "criminalRecord": {
+      "negativePenalRecordsDate": "20230811",//Se relaciona con Documentos
+      "negativePenalRecordFile": "Credential System.Pdf"//Se relaciona con Documentos
+  },
+  "insurance": {
+    "insuranceType": 1, //1 = Malpractice, 2 = Professional Liability
+    "malpractice": {
+      "insuranceCarrierName": "FirstMedical",
+      "insurancePolicyEffectiveDate": "20230811",
+      "insurancePolicyExpDate": "20230731",
+      "policyNumber": "a",
+      "coverageAmountPerOcurrence": "a",
+      "coverageAggregateLimit": "a",
+      "certificateCoverageFile": "Credential System.Pdf",
+      "oigCaseNumber": [
+        ""
+      ]
+    },
+    "professionalLiability": {
+      "insuranceCarrierName": "FirstMedical",
+      "insurancePolicyEffectiveDate": "20230811",
+      "insurancePolicyExpDate": "20230731",
+      "policyNumber": "a",
+      "coverageAmountPerOcurrence": "a",
+      "coverageAggregateLimit": "a",
+      "certificateCoverageFile": "Credential System.Pdf",
+      "actionExplanationFileName": "Software Developer I [Jd].Pdf"
+    }
+  },
+  "attestation": {
+    "isAccept": true,
+    "url": ""//el link donde estara ubicado el attestation
+  }
+}
